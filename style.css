@@ -1,5 +1,5 @@
 body {
-    background: url("../images/sims2Background.jpg");
+    background: url("sims2Background.jpg");
     background-size: cover;
     height: 150vh;
     margin-top: 80px;
@@ -264,14 +264,14 @@ body {
     height: 30px;
 }
 .favourite:hover {
-    content: url(../images/whiteHeartFilled.png);
+    content: url(whiteHeartFilled.png);
 }
 .download {
     width: 30px;
     height: 30px;
 }
 .download:hover {
-    content: url(../images/downloadWhiteFilled.png);
+    content: url(downloadWhiteFilled.png);
 }
 .flag {
     width: 30px;
@@ -280,7 +280,7 @@ body {
     margin: 0px 0px 0px 130px;
 }
 .flag:hover {
-    content: url(../images/flagFilled.png);
+    content: url(flagFilled.png);
 }
 .stat-number {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
