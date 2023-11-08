@@ -1,0 +1,636 @@
+---------------CSS Documentation--------------------------------------------------------------
+
+1. Specificity: Where some Selectors are more powerful,
+than other selectors, their power depends on where the
+selector and what type of selector it is, so the power
+from storngest to weakest is as follows:
+
+    1. inline style
+    2. ID Selectors
+    3. Class Selectors
+    4. Element Selectors
+----------------------------------------------------------------------------------------------
+2. Difference between ID and Class: Class is meant to be
+used multiple times for multiple elements, while ID's are
+meant to be used for one element.
+
+    Class: Multiple Element Usage
+    ID: Single Element Usage
+----------------------------------------------------------------------------------------------
+3. What are Pseudoselectors? : it's a tag of sorts for a
+css selector which enables it to do an action depending on
+a state of usage for the selected element/s or a condition
+its syntax looks like this:
+
+Selector: Psuedoselector {
+    property: value;
+    ...
+}
+
+Some types of Psuedoselectors are:
+    1. :hover | This Psuedoselector is used when we want
+    the style to apply when hovering over the selected
+    element.
+
+    2. :first-child | This Psuedoselector is used when we
+    want the style to be applied to the first child of the
+    selected element/s.
+
+    3. :last-child | This Psuedoselector is used when we
+    want the style to be applied to the last child of the
+    selected element/s.
+
+    4. :nth-child(n) | This Psuedoselector is used when we
+    want the style to be applied to the nth child of the
+    selected element/s.
+
+    5. :only-child | This Pseudoselector is used when we
+    want the style to be applied to an element which contains
+    only one child (Elements with more than one child are unaffected)
+
+    6. (Specific to <a> Tags):link | This Psuedoselector is used
+    when we want to change the style of a link that's unvisited
+
+    7. (Specific to <a> Tags):visited | This Psuedoselector is used
+    when we want to change the style of a link that's visited
+----------------------------------------------------------------------------------------------
+4. Advanced Selectors: These are selectors that use more than
+one element to style the selected element, the four basic types are:
+
+    1.Followed by selector: when used any Elem2 that has Elem1 before it
+    will be styled, its syntax is the following:
+
+    Elem1 + Elem2 {
+        property: value;
+    }
+
+    2.Followed by (In parent) Selector: when used any Elem2 that has Elem1 before it
+    and they're both in a parent, Elem2 will be styled, its syntax is the following:
+
+    Elem1 ~ Elem2 {
+        property: value;
+    }
+
+    3. Child of selector: when used any Elem2 that is a direct child of Elem1
+    will be styled, its syntax is the following:
+
+    Elem1 > Elem2 {
+        property: value;
+    }
+
+    Descendant of Selector: when used any Elem2 that is a 
+    descendant(child or child of child..etc) of Elem 1 will
+    be styled, its syntax is the following:
+
+    Elem1 Elem2 {
+        property: value;
+    }
+----------------------------------------------------------------------------------------------
+5. Attribute Selectors: they are selectors that enable us to choose an element based on its attribute's value
+its basic syntax looks like this:
+
+    Elem[Attribute=value]{
+        property: value;
+    }
+
+But this will only enable us to pick an element using an exact attribute's value
+, to use it more effecintly a number of special characters can be added after
+the attribute's name to change it's value-based choosing:
+
+    1. Elem[Attribute^=value] | This means that if the value of the attribute in HTML
+    starts with the attribute's value in CSS, it will be selected.
+
+    2. Elem[Attribute$=value] | This means that if the value of the attribute in HTML
+    endss with the attribute's value in CSS, it will be selected.
+
+    3. Elem[Attribute*=value] | This means that if the value of the attribute in HTML
+    contains the attribute's value in CSS, it will be selected.
+
+    ..There are others but they're not used very often.
+----------------------------------------------------------------------------------------------
+6. Properties: are declarations within the selector's brackets that enable us to style
+the element, think of it as selecting what property will be changed about the selected
+element, its syntax is the following:
+
+Selector {
+    property: value/s;
+    ...
+}
+----------------------------------------------------------------------------------------------
+7. The CSS General rule: This is how it's defined, first we have a selector, then curly braces
+within the curly braces we define the CSS block, which is a number of "property: value;" pairs
+which style the element/s selected with the selector.
+
+Selector {
+    property: value;
+    ...
+}
+----------------------------------------------------------------------------------------------
+8. Color Types: there are four ways to select colors in CSS, they're defined after a color(Which has many types) property
+they're the following:
+
+    1.Color's name: this is where you type the actual predefined color name after a color property like red, yellow, skyblue etc...
+    Ex:
+        color: Color_Name;
+    
+    2.Color's Decimal Value(RGB): this is where you define the amount of red, green and blue of a color, the range for each is from 0 to 255
+    and changing their value will change the the color itself.
+    Ex:
+        color: rgb(rValue, gValue, bValue);
+    
+    3. Color's Hexadecimal Value(hex): this is where you define the amount of red, green and blue using hexadecimal values from 0 to F
+    the first pair of values are used for red, the second pair of values for green, and the third pair of values for blue.
+    Ex:
+        color: #RRGGBB;
+    
+    4. Color's HSL value: this is where you define the hue, saturation, and lightness where the hue is a number from 0 to 359 and both
+    saturation and lightness are defined by a precentage.
+    Ex:
+        color: hsl(hueValue, saturationValue, lightnessValue);
+
+In addition, rgb and hsl can have an extra parameter named alpha which defines the opacity of the styled element where a is a value between 0 and 1.
+Ex:
+    color: rgba(rValue, gValue, bValue,opacityValue);
+    color: hsla(hueValue, saturationValue, lightnessValue, opacityValue);
+----------------------------------------------------------------------------------------------
+9. Changing Background color: Using the background or background-color property we can change the color for any element
+the syntax of it looks like this:
+
+    background: rgb();
+    OR
+    background-color: #FF0033;
+----------------------------------------------------------------------------------------------
+10. Setting up an image as a background: you can set up an image as a background for any element using the 
+background or background-image property as well as the url() function with the image's path or link in quotations
+in the url fucntion parameter, its syntax is the following:
+
+    background: url("linkOrPathOfImage")
+
+    background-image: url("linkOrPathOfImage");
+----------------------------------------------------------------------------------------------
+11. Background Properties: These are Properties that help us change the characteristics of the background itself,
+the color and image were some of them, in here we'll see the background-size and background-repeat Properties
+and their possible values.
+
+    1.Background Size : which is defined using the background-size property and can have any numerical size value
+    or cover or contain, its syntax is the following:
+
+        background-size: contain; | which will fit the size of the element horiziontally without stretching it vertically.
+        background-size: cover; | which will cover the entire element's size with the image, on behalf of the image's quality
+        and not showing it fully.
+    
+    2.Background Repeat: When an image is defined as a background-image within a <div> HTML element by defualt it will display
+    the image repeated multiple times in the div element, to change that we use the background-repeat property.
+    it has many values, its syntax is the following:
+
+        background-repeat: repeat; | which is the default of having the picture repeated.
+        background-repeat: no-repeat; | which means the image will be set in the top left corner of the element as one picture and will not be repeated.
+        background-repeat: repeat-x; | which will repeat the image horiziontally.
+        background-repeat: repeat-y; | which will repeat the image vertically.
+        background-repeat: round; | which will make the picture take it's actual size and repeat it.
+        background-repeat: space; | which will display the repeated pictures vertically with a space between each one.
+        background-repeat: unset; | basiclly do nothing to the picture, as if this declration dosen't exist.
+----------------------------------------------------------------------------------------------
+12. Gradients: which is the displaying of a color changing to another color over a space, there are two types of gradients in CSS
+radio (circular gradince) and linear (direction to dirction gradince), its syntax is the following:
+
+    1. Linear Gradince: in linear radince we use the linear-gradient() function, which takes the dircetion parammeter, then any
+    number of colors to be displayed.
+
+        background: linear-gradient(to direction,colorValue,colorValue,...);
+
+        it can have many directions:
+        - to right
+        - to left
+        - to bottom
+        - to top
+        or any combanation of the first two with the second two like this:
+        - to top right
+        - to top left
+        - to bottom right
+        - to bottom left
+        or by using angles from 0 to 360:
+        - #deg Ex: 240deg
+
+    2. Radio Gradince: in radio gradince we make a circular gradience color scheme, starting from the center and going outwards
+    we can define as many colors as we want, as well as optional precentages for each color, and finally we can change the type of radial
+    gradience, either ellipse(which is the default) or circle, its syntax is the following:
+
+        radial-gradient(shape*optional*, colorValue#%, colorValue, ...);
+----------------------------------------------------------------------------------------------
+13. Units: are ways to give some amount of value to properties, and there are two types of them, absolute units (which are the same acroos all devices)
+and realitve units (which depends on the parent element), in example of both is the following:
+
+    1. absloute: if I use the pixel unit to define the width of this element:
+
+        elem {
+            width: 30px
+        }
+    This means that it'll always be 30px on any screen
+
+    2. realitve: if I use the precentage unit to define the size of this elem1 that is a child of elem2:
+
+        elem1 {
+            width 70%
+        }
+    This means that elem1 will take 70% width of its parent elem2.
+
+realitve units are better for responsive webpages.
+
+absloute unit types:
+- cm
+- mm
+- px
+- pt (a little bigger than px)
+- pc (a lot bigger than px)
+
+realitve unit types:
+- % (precntage)
+- em (which depends on the standerd font-size|Ex: using 2em will make every font double its size)
+- vw (which depends on the width of the viewport which is what you're viewing the website on EX: 1vw = 1% of viewport's width)
+- vh (which depends on the height of the viewport which is what you're viewing the website on EX: 1vh = 1% of viewport's height)
+----------------------------------------------------------------------------------------------
+14. Text Manipulation: Things that you can change about a text regardless of the font.
+
+    1. Text-Decoration which decorates the text using lines, it's syntax is like this:
+
+        text-decoration: lineType;
+
+    The line types are the follwoing:
+    - none
+    - underline
+    - line-through
+    - overline
+
+    2. text-transform: which changes the size of the text's letters, it's syntax is the following:
+
+        text-transform: letterTransformationType;
+    
+    the letter transformation types are:
+    - lowercase (makes all letters lowercase)
+    - uppercase (makes all letters uppercase)
+    - capitalize (make every first letter of every word a capital letter)
+
+    3. text-align: changing the alignment of the selected element, its syntax is the following:
+
+        text-align: alignmentType;
+    
+    The alignmentType can be one of these four:
+    - left
+    - right
+    - center
+    - justify (Make all lines of a text the same length, just like research papers)
+----------------------------------------------------------------------------------------------
+15. Font Manipulation: changing text in font related properties.
+
+    1. font-size: change the size of the font, its sytanx is the following:
+
+        font-size: sizeValue;
+    
+    2. font-weight: change boldness of the text, it's syntax is the following:
+
+        font-weight: weightValue;
+    
+    weight value for most fonts is between 100-800. (400 is default).
+
+    3. font-style: change text into italic, it's syntax is the following:
+
+        font-style: styleType;
+
+    There are three styleTypes for styiling a font:
+    - normal
+    - italic
+    - oblique (more italic than normal italic)
+
+    4. font-family: a collection of fonts that have similar features, it's syntax is the following:
+
+        font-family: "font"(optional), ..., fontFamily;
+
+    As we can see we can input as many fonts as we want, what this will do is use the first font if available, if not the one after it and so on...
+----------------------------------------------------------------------------------------------
+16. The Box Model: a number of positioning properties to help with layout, each property is different
+
+    Content: the element's value itself.
+    Padding: the area between the content and the border.
+    Border: The area between the padding and the margin (they can also be styled with thickness, line type, color).
+    Margin: the area between the entire element (border) and the other elements.
+----------------------------------------------------------------------------------------------
+17. Changing Content size: we do so by wsing width and height properties.
+, we usually use the following unit type for each size property:
+
+    width: use realitve units. (because width is quite different form device to device).
+    height use absolute units.
+----------------------------------------------------------------------------------------------
+18. CSS Borders: the section between the padding and the margin
+you can manipulate the border by changing it's thickness, style, and color.
+it's syntax is the following:
+
+    border: sizeValue style colorValue;
+    OR INDIVIDUALLY
+    border-size: sizeValue;
+    border-style: style; //In style we have set names like solid, dotted, dashed and so on.
+    border-color: colorValue;
+----------------------------------------------------------------------------------------------
+19. Margin & Padding: the space between the padding and other elements, and the space between the content and the border.
+Their syntax is the following:
+
+    1. Margin:
+        margin: allDistance;
+        margin: top&bottomDistance right&leftDistance ;
+        margin topDistance rightDistance bottomDistance leftDistance;
+
+        margin-top: distanceValue;
+        margin-right: distanceValue;
+        margin-bottom: distanceValue;
+        margin-left: distanceValue;
+    
+    2. Padding:
+        padding: allDistance;
+        padding:  top&bottomDistance right&leftDistance;
+        padding topDistance rightDistance bottomDistance leftDistance;
+
+        padding-top: distanceValue;
+        padding-right: distanceValue;
+        padding-bottom: distanceValue;
+        padding-left: distanceValue;
+----------------------------------------------------------------------------------------------
+20. Float and Display: these define the display type of an element and its behaviour (mainly there are two display behaviours block, and inline).
+
+    Display Behaviours:
+
+        1.Block: an element of this display type will move down a block when added in HTML. (like <h1> and <p> elements)
+        2.Inline: an element of this display type will stay in the same line and won't move down a block when declared in CSS (Like <span> element).
+    
+We can change the display type using float and display properties:
+
+    1. Float: enables us to move (float) elements to a direction within the page like right or left.
+    it's syntax is the following:
+
+        float: direction;
+
+        it has many values like:
+
+        - none (keep it as is).
+        - left
+        - right
+        - inherent (get the float of the element's parent).
+    
+    2.Display: change the displaying of the element, it's syntax is the following:
+
+        display: displayType;
+
+    it has many types like:
+
+        - none (hides the element).
+        - inline
+        - block
+        - inline-block (keeps the element ad inline but adds the small block spacing around the element).
+----------------------------------------------------------------------------------------------
+21. Flexbox: stands for flexible box, and it's a display type that comes wih a range of properties.
+It's an alternative to using float and display properties.
+
+    Flexbox element: is split into the container, and the flexed items.
+    the container is the parent of the elements within it, its usually in the for of a div.
+    flex items are the child elements of the container and make up the contents of the box.
+
+    Creating a flexbox is quite easy, you make a div element in HTML as the container, and inside it
+    you input a number of items which are the flex items.
+
+    and in CSS we set up the container element's display as flex like this:
+
+        display: flex;
+
+    a flexbox has some properties we can change, some of which are:
+
+        1. flex-direction: which specifies in which direction the flex items will be placed
+        its values are:
+            - row (place elements in a row).
+            - column (place elements in a column).
+            - row-reverse (place elements in a row and reverse them).
+            - column-reverse (place elements in a column and reverse them).
+
+        2. flex-wrap: change whether elements that exceed the page limit wrap to the next block or stay.
+        its values are:
+            - wrap (enable the wrapping functionality).
+            - nowrap (disable the wrapping functionality and fit all flex items in flexbox).
+            - wrap-reverse (enable the wrapping functionality and reverse the items order).
+        
+        3. content alignments: we can align the items horiziontally or vertically using justify-content and align-items properties.
+        the syntax is the following:
+
+            justify-content: justifyType; (horiziontally)
+            align-items: alignType; (vertically)
+        
+        their possible values are:
+            - flex-start (aligns items to the left).
+            - center (aligns items to the center).
+            - flex-end (aligns items to the right).
+            - space-between (make equal space only between items).
+            - space-around (make equal space between items and the container's right and left sides).
+
+            Special Values:
+            - stretch (stretch all elements to the sides of the container).
+            - baseline (have the elements stay in a centerized line no matter their size).
+        
+        4. flex item properties: properties put within the style CSS block of the flex items
+        they are the following:
+
+            1. flex-order: these are used inline in HTML (or in CSS) by giving numbers to each flex item and order them however we like.
+            its syntax is:
+                order: #; (where number is the order of the item).
+
+            its possible values are: 
+                0 = defualt;
+                1-infinity = order of the items.
+
+            2. flex-grow: this defines how the extra space around the items are used between them by giving the items with the higher value more extra space relative to other items.
+             its syntax is:
+                flex-grow: value;
+
+                default value = 0
+
+            3. flex-shrink: this defines how the extra space around the items are used between them by giving the items with the higher value less extra space relative to other items.
+             its syntax is:
+                flex-shrink: value;
+
+                default value = 1
+
+            4. flex-basis: this defines the minimum width for the flex items.
+             its syntax is:
+                flex-basis: value;
+
+                default value = 0
+
+        flex-grow, flex-shrink, flex-basis can help us achieve responsiveness for our webpage.
+
+            5. flex (shorthand): this enables us to do flex-grow, flex-shrink, flex-basis all in one property.
+            its syntax is:
+                flex: growValue shrinkValue basisValue;
+
+            6.Item Alignment: we can align flex items individually by using the aling-self property.
+            its syntax is:
+
+                align-self: alignment;
+            
+            its possible values are:
+            - flex-start (aligns items to the left).
+            - center (aligns items to the center).
+            - flex-end (aligns items to the right).
+            - space-between (make equal space only between items).
+            - space-around (make equal space between items and the container's right and left sides).
+
+            Special Values:
+            - stretch (stretch all elements to the sides of the container).
+            - baseline (have the elements stay in a centerized line no matter their size).
+----------------------------------------------------------------------------------------------
+22. Flexbox VS Gridbox: 
+    
+    Flexbox: focuses on providing tools for width alone
+    Gridbox: is more manual and has more tools to to layout container in a specific way.
+----------------------------------------------------------------------------------------------
+23. Gridbox: a gridbox is a type of container like flexbox but is much more specific, it helps us create our containers more manually.
+to create a gridbox you need to make a container with items inside usually with <div> tag and make the display property for the container
+in this way:
+
+    display: grid;
+
+Now that we've created a grid let's start modifying it:
+
+    1. Template rows & columns: we can specify the amount of columns and rows of the grid using two properties in the container
+    as well as the size of each column and row, we can do so in the following way:
+
+        grid-template-column: col1Size col2Size col3Size ...
+        grid-template-row: row1Size row2Size row3Size ...
+
+    We can specify as many rows and columns as we want, and they don't have to be the same number for both rows and columns
+    we can use absloute and realtive values as well as auto to make it automatically use the container accordingly
+    , so possible values are:
+        - absloute value.
+        - realtive value.
+        - auto.
+
+    2. Justify and Alignment: we can use the same properties we used for flex box, but with different values:
+
+        justify-content: justifyType; (horiziontally) (using this ignores the template row and column spacing).
+        align-content: alignType; (vertically)
+
+    their possible values are:
+
+        - start
+        - center
+        - end
+        - space-evenly
+        - space-around
+        - space-between (mostly not used)
+
+    3. Column and Row Gaps: This helps us define the gaps between the rows and columns of our grid by using these two properties:
+
+        gap: rowSpace columnSpace; (shorthand)
+
+        row-gap: rowSpace;
+        column-gap: columnSpace;
+
+    4. Column and Row Lines: these help us define the start and endpoint of each grid cell individually, one by one;
+    the syntax is the following:
+
+        grid-area: rowStartPoint / columnStartPoint / rowEndPoint / columnEndPoint; (shorthand)
+
+        grid-column: startPoint/endPoint;
+        grid-row: startPoint/endPoint;
+
+    you can do this in two ways for each cell:
+        - 1 / 3 (start from 1 and end at 3).
+        - 1 / span 2 (start at 1 and end through 2 more cells).
+----------------------------------------------------------------------------------------------
+24. The Transition Property: adding animation to your webpage, we can do so by adding the transition
+property, which enables add animation, its syntax is:
+
+    transition: property duration animationStyle delay;
+
+Let's disect each one of them:
+
+    1. property: this can be any property within your selected element
+    you can choose one,multiple or all proprties:
+        - propertyName
+        - propertyName, propertyName, ... 
+        - all
+
+    2. duration: here we specify the duration of the animation itself like this:
+
+        - #TimeUnit (Example 2s = 2 seconds).
+
+    3. animationStyle: here we specify the style of the animation and wether we wan tit to be smooth or something else.
+    some of its values are:
+        - ease (straight from a to b);
+        - linear
+        - ease-in
+        - ease-out
+        - ease-in-out (go from a to b then back from b to a).
+
+    4. delay: here we specify the delay of the animation effect, how much time will it wait from activation to start the animation.
+    and how much time to stop on deactivation, we can do it the same as duration:
+
+        - #TimeUnit (Example 60ms = 2 milliseconds).
+
+----------------------------------------------------------------------------------------------
+25. Transform Functions: these are used within the selector of the element itself, and they help us change the element's location
+when used in the main selector, it'll be transformed instantly, if used in a psuedoselected selector, it'll activate when that happens(but not used).
+its syntax is:
+
+    transform: function();
+
+Some of these functions are:
+    1. Translate: this function moves the element itself to another location
+
+        translate(xShift, yShift);
+
+    2. Scale: this helps us size up the element.
+
+        scale(scaleAmount);
+    
+    3.Rotation: this helps us rotate the element.
+
+        - rotate(#deg);
+        - skewX(#deg); (skew along on X Axis).
+        - skewY(#deg); (skew along Y Axis).
+    
+    4. Matrix: is a shorthand that takes 6 arguments for all the functions.
+
+        matrix(xScale, skewX(in decimal), skewY(in decimal), yScale, translateX, translateY);
+
+----------------------------------------------------------------------------------------------
+26. Animations: making an animation that can be activated instantly.
+
+We can create an animation by using, @keyframes animationName{}.
+its syntax is:
+
+    @keyframes animationName {
+        keyword {property: value; ...}
+        ...
+    }
+
+there are many keywords to choose:
+
+    - from{}
+    - to{}
+    - #% (gradual precentage we can define more than one as it progresses).
+
+we can add an animation, by adding it to an element using the following syntax:
+
+    animation-name: animationName;
+
+there are also many properties for an animation, some of which are:
+
+    - animation: name duration timing-function delay iteration-count direction fill-mode; 
+
+    - animation-duration: #timeUnit;
+    - animation-timing-function: ; (this helps us adjust the speed of the animation like ease, linear...).
+    - animation-delay: #timeUnit; (can be positive or negative which makes it start before the page loads).
+    - animation-iteration-count: # or infinate; (this helps us define how many times the animation will play).
+    - animation-direction: direction; (this helps us pick where the animation starts and ends).
+        it has values like:
+            - normal (from start to finish).
+            - reverse (from finish to start).
+            - alternate (from start to finish and back).
+            - alternate-reverse (from finish to start and back).
+----------------------------------------------------------------------------------------------
